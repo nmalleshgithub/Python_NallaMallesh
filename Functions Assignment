@@ -1,0 +1,57 @@
+Assignment:
+#Create a function to display the product details like- Id, prodName, price inside the function 
+(a) calculate the total price of the product by passing the discount variable as 'global variable'
+
+#And also you need  create another function that takes the quantity of the product as an argument and calculate the total price after applying the discount  and return the total price from the function
+#(Note**: quantity * price = price  and then apply the discount over the price)
+
+
+Discount = 10
+
+def ProductDetails (id,prodName,price):
+    global Discount
+    
+    discountAmount= price*Discount/100
+    totalPrice = price-discountAmount
+    
+    print('productId:', id)
+    print('productName:', prodName)
+    print('OriginalPrice:', price)
+    print('discountAmount:', discountAmount)
+    print('afterdiscount:', totalPrice)
+    
+ProductDetails(101, 'Soap', 50)
+
+#output:
+
+productId: 101
+productName: Soap
+OriginalPrice: 50
+discountAmount: 5.0
+afterdiscount: 45.0
+
+
+
+Discount = 10
+
+# outside function 
+def ProductDetails (id,prodName,countity,price):
+    global Discount
+    
+    discountAmount= countity*price*Discount/100
+    totalPrice = countity*price-discountAmount
+    
+    print('productId:', id)
+    print('productName:', prodName)
+    print('OriginalPrice:', countity*price)
+    print('discountAmount:', discountAmount)
+    print('afterdiscount:', totalPrice)
+    
+ProductDetails(101, 'Soap',4, 50)
+
+#Output:
+output:productId: 101
+productName: Soap
+OriginalPrice: 200
+discountAmount: 20.0
+afterdiscount: 180.0
